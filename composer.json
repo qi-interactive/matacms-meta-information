@@ -12,10 +12,10 @@
     },
     "autoload": {
         "psr-4": {
-            "matacms\\metatag\\": ["../../../mata-cms/modules/matacms/matacms-meta-information", ""]
+            "matacms\\metainformation\\": ["../../../mata-cms/modules/matacms/matacms-meta-information", ""]
         }
     },
     "extra": {
-        "bootstrap": "matacms\\metatag\\Bootstrap"
+        "bootstrap": "matacms\\metainformation\\Bootstrap"
     }
 }
