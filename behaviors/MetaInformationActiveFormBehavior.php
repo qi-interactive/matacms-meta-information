@@ -19,8 +19,14 @@ class MetaInformationActiveFormBehavior extends  \yii\base\Behavior {
 
 		$form = $this->owner->form;
 		$metaInformationModel = $this->getMetaInformationModel();
-		echo $form->field($metaInformationModel, 'Keywords')->textarea();
-		echo $form->field($metaInformationModel, 'Description')->textarea();
+
+		echo '<div class="form-group field-metainformation">';
+		echo '<label class="control-label">Meta Information</label>';
+		echo '<div style="overflow:hidden;">';
+		echo $form->field($metaInformationModel, 'Keywords', ['options' => ['class' => 'form-group partial-max-width-item']])->textarea();
+		echo $form->field($metaInformationModel, 'Description', ['options' => ['class' => 'form-group partial-max-width-item']])->textarea();
+		echo '</div>';
+		echo '</div>';
 
 	}
 
