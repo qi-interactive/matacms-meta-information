@@ -1,0 +1,21 @@
+{
+    "name": "matacms/matacms-meta-tag",
+    "description": "Meta tags widget for MATA CMS",
+    "keywords": ["yii2", "matacms-meta-tag", "HTML", "mata-cms", "cms"],
+    "type": "yii2-extension",
+    "license": "MIT",
+    "support": {
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "matacms/matacms-base": "~1.1-alpha"
+    },
+    "autoload": {
+        "psr-4": {
+            "matacms\\metatag\\": ["../../../mata-cms/modules/matacms/matacms-meta-tag", ""]
+        }
+    },
+    "extra": {
+        "bootstrap": "matacms\\metatag\\Bootstrap"
+    }
+}
