@@ -39,8 +39,8 @@ class MetaInformation extends \matacms\db\ActiveRecord {
     {
         return [
         'Id' => 'ID',
-        'Keywords' => 'Keywords',
-        'Description' => 'Description',
+        'Keywords' => 'Meta Keywords',
+        'Description' => 'Meta Description',
         'DocumentId' => 'Document ID',
         ];
     }
