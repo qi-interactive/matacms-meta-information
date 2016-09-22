@@ -6,13 +6,13 @@
  * @license http://www.matacms.com/license/
  */
 
-namespace matacms\metatag\assets;
+namespace matacms\metainformation\assets;
 
 use yii\web\AssetBundle;
 
 class ModuleAsset extends AssetBundle
 {
-	public $sourcePath = '@vendor/matacms/matacms-meta-tag/web';
+	public $sourcePath = '@vendor/matacms/matacms-meta-information/web';
 
 	public $js = [
 	];

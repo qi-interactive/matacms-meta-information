@@ -6,7 +6,7 @@
  * @license http://www.matacms.com/license/
  */
 
-namespace matacms\metatag;
+namespace matacms\metainformation;
 
 use mata\base\Module as BaseModule;
 

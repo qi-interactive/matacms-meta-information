@@ -6,25 +6,25 @@
  * @license http://www.matacms.com/license/
  */
 
-namespace matacms\metatag\models;
+namespace matacms\metainformation\models;
 
 use Yii;
 use matacms\db\ActiveQuery;
 
 /**
- * This is the model class for table "{{%mata_category}}".
+ * This is the model class for table "{{%matacms_metainformation}}".
  *
  * @property integer $Id
- * @property string $Name
- * @property string $URI
+ * @property string $Keywords
+ * @property string $Description
+ * @property string $DocumentId
  *
- * @property MataCategoryitem[] $mataCategoryitems
  */
-class MetaTag extends \matacms\db\ActiveRecord {
+class MetaInformation extends \matacms\db\ActiveRecord {
 
     public static function tableName()
     {
-        return '{{%matacms_metatag}}';
+        return '{{%matacms_metainformation}}';
     }
 
     public function rules()
