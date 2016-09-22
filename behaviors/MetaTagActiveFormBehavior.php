@@ -17,40 +17,33 @@ class MetaTagActiveFormBehavior extends  \yii\base\Behavior {
 
 	public function metaTags($options = []) {
 
-		return;
+		$form = $this->owner->form;
+		$metaTagModel = $this->getMetaTagModel();
+		echo $form->field($metaTagModel, 'Keywords')->textarea();
+		echo $form->field($metaTagModel, 'Description')->textarea();
 
-		if(isset($this->owner->options['class'])) {
-		    $this->owner->options['class'] .= ' full-width';
-		} else {
-			$this->owner->options['class'] = ' full-width';
-		}
-
-		$options = array_merge($this->owner->inputOptions, $options);
-
-        $this->owner->parts['{label}'] = '';
-
-		$this->owner->adjustLabelFor($options);
-
-		$this->owner->parts['{input}'] = $this->getInputWidget($this->owner);
-
-		return $this->owner;
 	}
 
-    private function getInputWidget($owner)
+    private function getMetaTagModel()
     {
-        $metaTagModel = $this->findMetaTagModel();
-        $metaTagModel->load(Yii::$app->request->post());
-
-        return \matacms\metatag\widgets\MetaTagWidget::widget([
-            'model' => $metaTagModel,
-            'documentId' => $this->getDocumentId($owner->model),
-            'form' => $this->owner->form
-        ]);
+        $metaTagModel = MetaTag::find()->where(['matacms_metatag.DocumentId' => $this->getDocumentId($this->owner->model)])->one() ?: new MetaTag;
+		$metaTagModel->load(Yii::$app->request->post());
+		return $metaTagModel;
     }
 
-    private function findMetaTagModel()
+	private function getDocumentId($model)
     {
-         return MetaTag::find()->where(['DocumentId' => $this->getDocumentId($owner->model)])->one();
+        $documentId = $model->getDocumentId()->getId();
+		$pattern = '/([a-zA-Z\\\]*)-([a-zA-Z0-9]*)(::)?([a-zA-Z0-9]*)?/';
+		preg_match($pattern, $documentId, $matches);
+		if(!empty($matches) && empty($matches[2])) {
+			$pk = uniqid('tmp_');
+			if(!empty($matches[4]))
+				$pk .= "::" . $matches[4];
+			$documentId = $matches[1] . "-" . $pk;
+		}
+
+        return $documentId;
     }
 
 }

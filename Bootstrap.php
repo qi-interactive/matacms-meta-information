@@ -61,7 +61,7 @@ class Bootstrap extends \mata\base\Bootstrap {
 
 		$documentId = $model->getDocumentId()->getId();
 
-		$metaTagModel = MetaTag::find()->where(["DocumentId" => $documentId])->one() ?: new MetaTag;
+		$metaTagModel = MetaTag::find()->where(["matacms_metatag.DocumentId" => $documentId])->one() ?: new MetaTag;
 		$metaTagModel->Keywords = $metaTags['Keywords'];
 		$metaTagModel->Description = $metaTags['Description'];
 		$metaTagModel->DocumentId = $documentId;
