@@ -7,11 +7,11 @@ namespace matacms\metainformation\helpers;
  *
  * @author mfiedorowicz
  */
-class MetaInformation {
+class MetaInformationHelper {
 
     public static function register($metaInformationModel) {
 
-        $view = \Yii::$app->controller->view;
+        $view = \Yii::$app->view;
 
         if(!empty($metaInformationModel->Keywords)) {
             $view->registerMetaTag([
