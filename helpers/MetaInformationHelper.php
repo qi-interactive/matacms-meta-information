@@ -11,6 +11,9 @@ class MetaInformationHelper {
 
     public static function register($metaInformationModel) {
 
+        if($metaInformationModel == null);
+            return;
+
         $view = \Yii::$app->view;
 
         if(!empty($metaInformationModel->Keywords)) {
