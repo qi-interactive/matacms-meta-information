@@ -19,14 +19,14 @@ class MetaInformationHelper {
 
         if(!empty($metaInformationModel->Keywords)) {
             $view->registerMetaTag([
-                "property" => "keywords",
+                "name" => "keywords",
                 "content" => $metaInformationModel->Keywords,
                 ]);
         }
 
         if(!empty($metaInformationModel->Description)) {
             $view->registerMetaTag([
-                "property" => "description",
+                "name" => "description",
                 "content" => $metaInformationModel->Description,
                 ]);
         }
