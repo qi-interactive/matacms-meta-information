@@ -30,7 +30,7 @@ class MetaInformation extends \matacms\db\ActiveRecord {
     public function rules()
     {
         return [
-        [['Keywords', 'Description', 'DocumentId'], 'required'],
+        [['Keywords', 'Description', 'Title', 'DocumentId'], 'required'],
         [['Keywords', 'Description'], 'string', 'max' => 160],
         ];
     }
