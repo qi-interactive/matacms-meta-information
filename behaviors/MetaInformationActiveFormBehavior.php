@@ -21,7 +21,8 @@ class MetaInformationActiveFormBehavior extends  \yii\base\Behavior {
 		$metaInformationModel = $this->getMetaInformationModel();
 		echo $form->field($metaInformationModel, 'Keywords')->textarea();
 		echo $form->field($metaInformationModel, 'Description')->textarea();
-
+		echo $form->field($metaInformationModel, 'Title', ['options' => ['class' => 'form-group partial-max-width-item']])->textarea();
+	
 	}
 
     private function getMetaInformationModel()
