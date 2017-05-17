@@ -48,6 +48,7 @@ class Bootstrap extends \mata\base\Bootstrap {
 		$documentId = $model->getDocumentId()->getId();
 
 		$metaInformationModel = MetaInformation::find()->where(["matacms_metainformation.DocumentId" => $documentId])->one() ?: new MetaInformation;
+		$metaInformationModel->Title = $metaInformation['Title'];
 		$metaInformationModel->Keywords = $metaInformation['Keywords'];
 		$metaInformationModel->Description = $metaInformation['Description'];
 		$metaInformationModel->DocumentId = $documentId;
